@@ -21,9 +21,6 @@ ResNet50 achieved the higher reported test accuracy and weighted F1 score. The c
 ├── requirements.txt
 ├── notebooks/
 │   └── skin_lesion_cnn_experiment.ipynb
-├── models/
-│   ├── resnet_model.keras        # add trained model
-│   └── vgg_model.keras           # add trained model
 └── paper/
     └── CNN_research.pdf
 ```
@@ -96,21 +93,7 @@ The evaluation section loads the trained checkpoints and calculates weighted F1 
 
 ## Trained models
 
-The trained `.keras` checkpoints can be added to the `models/` directory. If the checkpoint files are too large for normal Git tracking, store them with **Git LFS** or attach them to a GitHub Release instead of committing the raw binaries directly.
-
-Example with Git LFS:
-
-```bash
-git lfs install
-git lfs track "*.keras"
-git add .gitattributes models/
-```
-
-## Reproducibility notes
-
-The original paper and its Appendix C are not perfectly aligned in two places. The prose methodology describes a 70/15/15 train/validation/test split, while the appendix code produces approximately 75/15/10. The reported test-set size is consistent with the 10% test split, so the notebook preserves the appendix implementation.
-
-The paper's limitations section also refers to 30 training epochs, whereas the printed Appendix C training code sets `epochs=25` with early stopping. The notebook preserves the Appendix C value rather than silently changing it.
+The trained `.keras` checkpoints have been added as Github releases accompanying this repo. 
 
 ## Research paper
 
